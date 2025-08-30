@@ -1,62 +1,60 @@
 # Cyclone Watch
 
-An Machine Learning based web application for Cyclone Warning
+Cyclone Watch is a machine learning-powered web application for predicting cyclone intensity from satellite images. Built with Django and TensorFlow, it provides a simple interface to upload images and receive predictions.
 
-## Description
+## Features
 
-An in-depth paragraph about your project and overview of use.
+- Upload satellite images to predict cyclone intensity
+- REST API support
+- Admin dashboard (Django)
+- Docker support for easy deployment
 
-## Getting Started
+## Quick Start
 
-### Dependencies
+### Requirements
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+- Python 3.11
+- Django 4.2
+- TensorFlow 2.12
+- See `requirements.txt` for full dependencies
 
-### Installing
+### Setup & Run
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+Clone the repository and install dependencies:
 
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
+```bash
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
 ```
 
-## Authors
+Or use Docker:
 
-Contributors names and contact info
+```bash
+docker build -t cyclone-watch .
+docker run -p 8000:8000 cyclone-watch
+```
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Access the app at `http://localhost:8000`
 
-## Version History
+## Usage
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+1. Open the web interface
+2. Upload a satellite image (JPG/PNG)
+3. View predicted cyclone intensity
+
+## Project Structure
+
+- `intensitymodel/` - ML prediction logic and Django app
+- `rest_api/` - REST API endpoints
+- `media/` - Uploaded images
+- `model.h5` - Pre-trained ML model
+- `Dockerfile` - Container setup
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+MIT License
 
-## Acknowledgments
+## Author
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+HimanshuxD79
